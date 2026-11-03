@@ -1,5 +1,7 @@
 # everything-selfhost-kit
 
+**在线 demo（本仓库工作流自动构建）**：https://verchiel666.github.io/everything-selfhost-kit/ — 目前有电子表格 / 笔记 / 数独 / 国际象棋。
+
 在**受限环境**里构建并自托管 [HeyPuter/everything](https://github.com/HeyPuter/everything)（用 AI 重写的浏览器版 Office / Photoshop / AutoCAD / 3D，51 个应用，MIT）的一套小脚本。
 
 > 场景来源：一台 Android 手机上——没有 git 二进制、`github.com` 不通、系统禁止执行应用目录里的任何文件（`node_modules/.bin/*` 直接 `EACCES`）。上游的构建说明默认你在正常 Linux/macOS 上，这些坑没人写过，所以记在这里。
