@@ -34,7 +34,7 @@ node scripts/serve.mjs ~/site 8080 0.0.0.0     # → http://127.0.0.1:8080/
 | `scripts/gen-launcher.mjs` | 扫描站点目录生成单文件中文启动页（分类 / 搜索 / 自动抓图标） |
 | `scripts/bootstrap-npm.sh` | 在没有系统 npm 的机器上用 node 自举 npm |
 | `docs/BUILD-NOTES.md` | 4 个真实坑：报错原文、原因、绕过办法、谁会踩到 |
-| `workflows/pages.yml` | 构建指定 app 并部署 Pages 的工作流**模板**（见 [workflows/README.md](workflows/README.md)，需一步手动启用） |
+| `.github/workflows/pages.yml` | 在 Actions 里选 app 名即可构建并部署到 Pages（手动触发，无需本地环境） |
 
 ## 四个坑（详情见 [docs/BUILD-NOTES.md](docs/BUILD-NOTES.md)）
 
@@ -48,6 +48,8 @@ node scripts/serve.mjs ~/site 8080 0.0.0.0     # → http://127.0.0.1:8080/
 1、2 是"运行时缺 NAPI 符号"一类，换 WASM 版依赖或升级到 Vite 8（Rolldown）即可；3 用 `base: './'` 覆盖配置；4 用本仓库带跨应用回退的 `serve.mjs`，或把 app 部署在域名根路径。
 
 ## 用 GitHub Actions 代替本地构建
+
+仓库自带工作流 `.github/workflows/pages.yml`（`workflow_dispatch` 手动触发）：
 
 ```sh
 # 仓库 Actions 里手动触发，填要构建的 app（逗号分隔）
